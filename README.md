@@ -57,3 +57,21 @@ git commit -m "creating vXYZ release"
 git tag vXYZ
 git push origin master --tags
 ```
+
+
+Development notes
+=================
+
+How to build and upload BOSH release
+------------------------------------
+```bash
+# bundle install --local
+bundle exec rake release:create_dev_release
+bosh upload release ./dev_releases/admin-ui-2-dev.yml
+```
+
+
+
+
+
+
