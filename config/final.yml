@@ -5,3 +5,10 @@ blobstore:
     bucket_name: admin-ui-boshrelease
     encryption_key: cloudfoundry-community
 final_name: admin-ui
+
+# ---
+# blobstore:
+#   provider: local
+#   options:
+#     blobstore_path: /Users/allomov/work/altoros/admin-ui-boshrelease/tmp
+# final_name: admin_ui_blobstore

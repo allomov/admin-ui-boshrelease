@@ -57,3 +57,14 @@ git commit -m "creating vXYZ release"
 git tag vXYZ
 git push origin master --tags
 ```
+
+
+Cerate and upload release
+=========================================
+
+```
+bosh create release --force
+bosh upload release ./dev_releases/admin-ui-with-i18n/admin-ui-with-i18n-0+dev.1.yml
+```
+
+
