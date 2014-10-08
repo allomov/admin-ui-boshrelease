@@ -1,0 +1,9 @@
+set -e -x
+
+tar xvjf libsqlite3/sqlite3_3.8.6.orig.tar.bz2
+
+cd sqlite3-3.8.6
+
+./configure --prefix=${BOSH_INSTALL_TARGET}
+make
+make install
