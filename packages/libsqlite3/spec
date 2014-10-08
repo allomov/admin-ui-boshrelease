@@ -1,4 +1,4 @@
 ---
-name: libyaml
+name: libsqlite3
 files:
-  - libsqlite3/yaml-0.1.4.tgz
+  - libsqlite3/sqlite3_3.8.6.orig.tar.bz2

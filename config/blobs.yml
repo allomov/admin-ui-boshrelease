@@ -19,3 +19,8 @@ ruby/rubygems-1.8.24.tgz:
   sha: !binary |-
     MzBmMjcwNDdlNzRmNzk0MzExNzczNmEwZDNlMjI0OTk0ZmVlMDkwNQ==
   size: 380101
+libsqlite3/sqlite3_3.8.6.orig.tar.bz2:
+  object_id: cb518c3a-5733-4be1-bafb-e04905c742a2
+  sha: !binary |-
+    Njk4MWE0MTE4OGMzZjFlZmU0NzllZWJjMDk4NjdhNDNhYjVhZWYyMw==
+  size: 4039449

@@ -9,6 +9,7 @@ packages:
   - admin_ui
   - ruby
   - libyaml
+  - libsqlite3
   - common
 properties:
   nats.user:
