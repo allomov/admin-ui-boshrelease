@@ -1,9 +1,15 @@
 set -e -x
 
-tar xvjf libsqlite3/sqlite3_3.8.6.orig.tar.bz2
+tar xzvf libsqlite3/sqlite-autoconf-3.8.6.tar.gz
 
-cd sqlite3-3.8.6
+cd sqlite-autoconf-3080600
 
-./configure --prefix=${BOSH_INSTALL_TARGET}
+# export BOSH_INSTALL_TARGET=/workdir/sqlite3-3.8.2
+./configure --prefix=${BOSH_INSTALL_TARGET} --disable-static CFLAGS="-g -O2 -DSQLITE_ENABLE_FTS3=1 \
+                                                                            -DSQLITE_ENABLE_COLUMN_METADATA=1     \
+                                                                            -DSQLITE_ENABLE_UNLOCK_NOTIFY=1       \
+                                                                            -DSQLITE_SECURE_DELETE=1"
+
+
 make
 make install
