@@ -8,8 +8,8 @@ templates:
 packages:
   - admin_ui
   - ruby
-  - libyaml
   - libsqlite3
+  - libpq
   - common
 properties:
   nats.user:
