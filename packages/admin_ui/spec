@@ -3,6 +3,8 @@ name: admin_ui
 
 dependencies:
  - ruby
+ - libsqlite3
+ - libpq
 
 files:
   - admin_ui/{Gemfile,Gemfile.lock}

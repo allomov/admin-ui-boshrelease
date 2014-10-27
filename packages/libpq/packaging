@@ -1,10 +1,12 @@
-set -e
+set -e -x
 
-tar xzf postgres/postgresql-9.0.3.tar.gz
+# wget http://ftp.postgresql.org/pub/source/v9.3.5/postgresql-9.3.5.tar.gz
 
-cd postgresql-9.0.3
-./configure --prefix=$BOSH_INSTALL_TARGET
-cp -R src/include $BOSH_INSTALL_TARGET
+tar xzvf postgres/postgresql-9.3.5.tar.gz
+
+cd postgresql-9.3.5
+./configure --prefix=$BOSH_INSTALL_TARGET --without-zlib --without-readline
+# cp -R src/include $BOSH_INSTALL_TARGET
 cd src/interfaces/libpq
 make
 make install

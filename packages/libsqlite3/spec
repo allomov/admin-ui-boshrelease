@@ -1,4 +1,4 @@
 ---
 name: libsqlite3
 files:
-  - libsqlite3/sqlite-autoconf-3.8.6.tar.gz
+  - libsqlite3/sqlite-autoconf-3080700.tar.gz
