@@ -4,31 +4,9 @@ set -e -x
 cp -a admin_ui ${BOSH_INSTALL_TARGET}
 cd ${BOSH_INSTALL_TARGET}/admin_ui
 
-
 libpq_dir=/var/vcap/packages/libpq
 bundle_cmd="/var/vcap/packages/ruby/bin/bundle"
 
-echo "*********"
-echo $(pwd)
-ls -la .
-
-echo "*********"
-echo $libpq_dir
-ls -la $libpq_dir
-
-echo "*********"
-echo $BOSH_INSTALL_TARGET
-ls -la $BOSH_INSTALL_TARGET
-
-echo "*********"
-echo $BOSH_COMPILE_TARGET
-ls -la $BOSH_COMPILE_TARGET
-
-echo "*********"
-echo "/var/vcap/packages/libpq/bin/pg_config" 
-ls -la /var/vcap/packages/libpq/bin/pg_config
-
-# $bundle_cmd config build.pg 
 $bundle_cmd install \
   --local \
   --deployment \
@@ -36,18 +14,6 @@ $bundle_cmd install \
   --no-prune \
   --with-pg-lib=$libpq_dir/lib --with-pg-include=$libpq_dir/include \
   --with-pg-config=/var/vcap/packages/libpq/bin/pg_config
-
-  # --binstubs ${BOSH_INSTALL_TARGET}/bin \
-  # --path ${BOSH_INSTALL_TARGET}/gem_home
-
-
-# /var/vcap/packages/ruby/bin/bundle install --deployment \
-#                                            --without=development test \
-#                                            --with-pg-lib=/var/vcap/packages/libpq/lib \
-#                                            --with-pg-config=/var/vcap/packages/libpq/bin/pg_config
-
-
-
 
 cd ${BOSH_INSTALL_TARGET}
 cp -a ${BOSH_COMPILE_TARGET}/vcap-common vcap-common
