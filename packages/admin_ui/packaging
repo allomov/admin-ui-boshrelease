@@ -37,16 +37,11 @@ $bundle_cmd install \
   --with-pg-lib=$libpq_dir/lib --with-pg-include=$libpq_dir/include \
   --with-pg-config=/var/vcap/packages/libpq/bin/pg_config
 
-  # --binstubs ${BOSH_INSTALL_TARGET}/bin \
-  # --path ${BOSH_INSTALL_TARGET}/gem_home
-
 
 # /var/vcap/packages/ruby/bin/bundle install --deployment \
 #                                            --without=development test \
 #                                            --with-pg-lib=/var/vcap/packages/libpq/lib \
 #                                            --with-pg-config=/var/vcap/packages/libpq/bin/pg_config
-
-
 
 
 cd ${BOSH_INSTALL_TARGET}

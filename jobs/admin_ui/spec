@@ -9,7 +9,7 @@ packages:
   - admin_ui
   - ruby
   - libsqlite3
-  - libpq
+  - postgres
   - common
 properties:
   nats.user:
