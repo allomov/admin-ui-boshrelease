@@ -15,3 +15,5 @@ dev_releases
 #*
 /admin-ui.local.yml
 releases/**/*.tgz
+.ruby-gemset
+
