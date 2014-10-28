@@ -6,42 +6,50 @@ cd ${BOSH_INSTALL_TARGET}/admin_ui
 
 
 libpq_dir=/var/vcap/packages/libpq
-bundle_cmd="/var/vcap/packages/ruby/bin/bundle"
+ruby_dir=/var/vcap/packages/ruby
+bundle_cmd="$ruby_dir/bin/bundle"
 
 echo "*********"
 echo $(pwd)
-ls -la .
+ls -Lla .
 
 echo "*********"
-echo $libpq_dir
-ls -la $libpq_dir
-
-echo "*********"
+echo "BOSH_INSTALL_TARGET"
 echo $BOSH_INSTALL_TARGET
-ls -la $BOSH_INSTALL_TARGET
+ls -Lla $BOSH_INSTALL_TARGET
 
 echo "*********"
+echo "BOSH_COMPILE_TARGET"
 echo $BOSH_COMPILE_TARGET
-ls -la $BOSH_COMPILE_TARGET
+ls -Lla $BOSH_COMPILE_TARGET
 
 echo "*********"
-echo "/var/vcap/packages/libpq/bin/pg_config" 
-ls -la /var/vcap/packages/libpq/bin/pg_config
+echo "libpq_dir"
+echo $libpq_dir
+ls -Lla $libpq_dir
 
-# $bundle_cmd config build.pg 
+echo "*********"
+echo "$libpq_dir/lib" 
+ls -Lla $libpq_dir/lib
+
+# echo "*********"
+# echo "$libpq_dir/include" 
+# ls -la $libpq_dir/include
+
+
+
+$bundle_cmd config build.pg --with-pg-dir=$libpq_dir
 $bundle_cmd install \
   --local \
   --deployment \
   --without development test \
   --no-prune \
-  --with-pg-lib=$libpq_dir/lib --with-pg-include=$libpq_dir/include \
-  --with-pg-config=/var/vcap/packages/libpq/bin/pg_config
-
+  --binstubs $ruby_dir/bin
 
 # /var/vcap/packages/ruby/bin/bundle install --deployment \
 #                                            --without=development test \
 #                                            --with-pg-lib=/var/vcap/packages/libpq/lib \
-#                                            --with-pg-config=/var/vcap/packages/libpq/bin/pg_config
+#                                            
 
 
 cd ${BOSH_INSTALL_TARGET}

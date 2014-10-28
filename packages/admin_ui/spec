@@ -4,7 +4,7 @@ name: admin_ui
 dependencies:
  - ruby
  - libsqlite3
- - postgres
+ - libpq
 
 files:
   - admin_ui/{Gemfile,Gemfile.lock}
