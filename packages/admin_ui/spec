@@ -9,4 +9,6 @@ dependencies:
 files:
   - admin_ui/{Gemfile,Gemfile.lock}
   - admin_ui/{lib,bin,db}/**/*
+  - admin_ui/vendor/cache
   - vcap-common/**/*
+  - vcap-common/vendor/cache
