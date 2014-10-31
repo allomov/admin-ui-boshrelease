@@ -4,5 +4,5 @@ dependencies:
   - ruby
 files:
   - uaac/Gemfile*
-  - uaac/vendor/*
+  - uaac/vendor/cache/*
   - uaac/.bundle/*
