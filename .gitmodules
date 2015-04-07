@@ -1,3 +1,6 @@
 [submodule "src/vcap-common"]
 	path = src/vcap-common
 	url = https://github.com/cloudfoundry/vcap-common.git
+[submodule "src/admin_ui"]
+	path = src/admin_ui
+	url = https://github.com/allomov/admin-ui.git
